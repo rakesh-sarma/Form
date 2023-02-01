@@ -1,25 +1,34 @@
 // import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [Name, setName]= useState("")
+  function handleName(e) {
+    setName(e.target.value)
+    console.log("Name:",Name);
+  }
+  function handleEmail(e) {
+    setName(e.target.value)
+    console.log("Email:",Name);
+  }
+  function handlePsw(e) {
+    setName(e.target.value)
+    console.log("Password:",Name);
+  }
   return (
     <div className="App">
-       <form>
-        <label for="name">
-          Name:
-          <input type="text" name="name" required/>
-        </label>
-        <br/>
-        <label for="email">
-          Email:
-          <input type="text" name="email" required/>
-        </label>
-        <br/>
-        <label for="password">
-          Password:
-          <input type="password" name="password" required />
-        </label>
-        <br/>
+      <form>
+        <label>Name:</label>
+        <input type="text" name="name" required onChange={handleName} />
+        <br />
+        <label>Email: </label>
+        <input type="text" name="email" required onChange={handleEmail}/>
+        <br />
+        <label>Password: </label>
+        <input type="password" name="password" required onChange={handlePsw}/>
+
+        <br />
         <input type="submit" value="submit" />
       </form>
     </div>
